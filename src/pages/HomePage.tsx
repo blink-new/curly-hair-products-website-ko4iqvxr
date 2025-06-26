@@ -1,135 +1,148 @@
 import React from 'react';
-import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
 import { Link } from 'react-router-dom';
-import { Sparkles, Heart, Leaf, Star } from 'lucide-react';
+import { ArrowRight, Star, Users, Truck, Shield } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const HomePage = () => {
   const features = [
     {
-      icon: <Sparkles className="w-6 h-6 text-amber-600" />,
-      title: "Curl-Specific Formulas",
-      description: "Products designed for your unique curl pattern and porosity level"
+      icon: <Star className="w-6 h-6" />,
+      title: "Premium Quality",
+      description: "Every piece is crafted with premium materials and attention to detail."
     },
     {
-      icon: <Heart className="w-6 h-6 text-rose-500" />,
-      title: "Gentle & Nourishing",
-      description: "Sulfate-free, paraben-free formulas that love your curls"
+      icon: <Users className="w-6 h-6" />,
+      title: "Community Driven",
+      description: "Built by the community, for the community. Your voice shapes our brand."
     },
     {
-      icon: <Leaf className="w-6 h-6 text-emerald-600" />,
-      title: "Natural Ingredients",
-      description: "Enriched with shea butter, coconut oil, and botanical extracts"
+      icon: <Truck className="w-6 h-6" />,
+      title: "Fast Shipping",
+      description: "Free worldwide shipping on orders over $100. Express options available."
     },
     {
-      icon: <Star className="w-6 h-6 text-yellow-500" />,
-      title: "Expert Approved",
-      description: "Developed with curl specialists and real curly-haired people"
+      icon: <Shield className="w-6 h-6" />,
+      title: "Lifetime Warranty",
+      description: "We stand by our quality. Lifetime warranty on all core products."
     }
   ];
 
-  const curlTypes = [
-    { type: "2A-2B", name: "Wavy", description: "Loose waves with light texture", image: "https://images.unsplash.com/photo-1594736797933-d0b22ce8a852?w=300&h=400&fit=crop" },
-    { type: "2C-3A", name: "Curly", description: "Defined curls with bounce", image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=300&h=400&fit=crop" },
-    { type: "3B-3C", name: "Coily", description: "Tight curls with volume", image: "https://images.unsplash.com/photo-1634198977815-4e64d1c8f4a7?w=300&h=400&fit=crop" },
-    { type: "4A-4C", name: "Kinky", description: "Dense, tightly coiled texture", image: "https://images.unsplash.com/photo-1596815059600-9e219b6b4338?w=300&h=400&fit=crop" }
-  ];
-
   return (
-    <div className="overflow-hidden">
+    <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <Badge className="mb-6 bg-amber-100 text-amber-800 border-amber-200 hover:bg-amber-200 transition-colors">
-            ✨ Celebrate Your Natural Texture
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-amber-600 via-orange-600 to-rose-600 bg-clip-text text-transparent mb-6 leading-tight">
-            Love Your Curls
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
+          }}
+        />
+        
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl">
+          <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight">
+            <span className="block">VALUE</span>
+            <span className="block text-blue-400">OVER</span>
+            <span className="block">ASSETS</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Discover the perfect products for your unique curl pattern. From gentle cleansers to nourishing treatments, we've got everything you need for healthy, beautiful curls.
+          <p className="text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto">
+            Street culture meets conscious consumption. Premium streetwear that values purpose over profit.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" asChild className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-8 py-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105">
-              <Link to="/hair-quiz">Find Your Products</Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-white text-black hover:bg-gray-100 text-lg px-8 py-4">
+              <Link to="/shop">
+                Shop Collection <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-2 border-amber-600 text-amber-700 hover:bg-amber-50 px-8 py-6 text-lg rounded-full transition-all duration-300">
-              <Link to="/products">Shop All Products</Link>
+            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-black text-lg px-8 py-4">
+              <Link to="/about">Our Story</Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white/60 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
-            Why Choose Our Products?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 bg-white/80 backdrop-blur-sm border-0 shadow-md">
-                <CardContent className="p-6">
-                  <div className="mb-4 flex justify-center">
-                    <div className="p-3 rounded-full bg-gradient-to-r from-amber-100 to-orange-100">
-                      {feature.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Curl Types Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Products for Every Curl Type
-            </h2>
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose VOA?</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From loose waves to tight coils, we have specialized formulas for every curl pattern
+              We're not just another clothing brand. We're a movement that prioritizes values over vanity.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {curlTypes.map((curl, index) => (
-              <Card key={index} className="group cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden bg-white border-0 shadow-lg">
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img 
-                    src={curl.image} 
-                    alt={curl.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="bg-black text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500 transition-colors">
+                  {feature.icon}
                 </div>
-                <CardContent className="p-6">
-                  <Badge className="mb-3 bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 border-0">
-                    {curl.type}
-                  </Badge>
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900">{curl.name}</h3>
-                  <p className="text-gray-600">{curl.description}</p>
-                </CardContent>
-              </Card>
+                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-amber-600 via-orange-600 to-rose-600">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Ready to Transform Your Curls?
-          </h2>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">
-            Take our quick hair quiz to discover your perfect product routine
-          </p>
-          <Button size="lg" asChild className="bg-white text-amber-700 hover:bg-gray-100 px-8 py-6 text-lg rounded-full transition-all duration-300 transform hover:scale-105">
-            <Link to="/hair-quiz">Start Hair Quiz →</Link>
+      {/* Featured Collections */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Featured Collections</h2>
+            <p className="text-xl text-gray-600">Curated pieces that define modern streetwear</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="group cursor-pointer">
+              <div className="relative overflow-hidden rounded-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1503341338985-b018c9bed62d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                  alt="Essential Collection"
+                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <h3 className="text-3xl font-bold mb-2">ESSENTIALS</h3>
+                    <p className="text-lg">Timeless basics, redefined</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="group cursor-pointer">
+              <div className="relative overflow-hidden rounded-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                  alt="Street Collection"
+                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <h3 className="text-3xl font-bold mb-2">STREET</h3>
+                    <p className="text-lg">Bold designs, bold statements</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Philosophy</h2>
+          <div className="text-2xl md:text-3xl font-light space-y-6 text-gray-700">
+            <p>"In a world obsessed with possessions,</p>
+            <p className="text-black font-normal">we choose to value what truly matters."</p>
+            <p>Quality over quantity.</p>
+            <p>Purpose over profit.</p>
+            <p className="text-blue-500 font-bold">Value over assets.</p>
+          </div>
+          <Button asChild size="lg" className="mt-12 bg-black text-white hover:bg-gray-800 text-lg px-8 py-4">
+            <Link to="/about">Learn More About VOA</Link>
           </Button>
         </div>
       </section>
